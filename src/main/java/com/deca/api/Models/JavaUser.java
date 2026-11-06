@@ -33,6 +33,12 @@ public class JavaUser {
     @Column(name = "password", nullable = false, length = 255)
     private String password;
 
+    @Column(name = "salary")
+    private Float salary;
+
+    @Column(name = "visits")
+    private Integer visits;
+
     public JavaUser() {
     }
 
@@ -59,4 +65,22 @@ public class JavaUser {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Float getSalary() {
+        return salary;
+    }
+
+    public void setSalary(Float salary) {
+        this.salary = salary;
+    }
+
+    public Integer getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Integer visits) {
+        this.visits = visits;
+    }
+
+
 }
