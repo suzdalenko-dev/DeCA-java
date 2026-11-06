@@ -27,8 +27,8 @@ public class JavaUserObserver {
             /*  actualizar aqui que problema hay, 
             buscar si existe linea en "user_counter" si no existe la creamos con value=1 si existe value=value+1
             que cojones problema hay de hacerlo aqui !"!!!!!!!!!!!!!!!!!!!!"
-            userCounterService.increment();
             */
+           userCounterService.increment();
         }
     }
 }
