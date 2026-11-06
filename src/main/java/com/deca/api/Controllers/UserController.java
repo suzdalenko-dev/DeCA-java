@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 public class UserController {
     // GET http://localhost:8080/
-    @GetMapping ("/")
+    @GetMapping ("/xx")
     public String index() {
-        return "Greetings from Spring Boot!";
+        return "Greetings from Spring Boot! AAA";
     }
 }
