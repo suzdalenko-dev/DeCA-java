@@ -27,4 +27,16 @@ public class SpringContext implements ApplicationContextAware {
 
         return applicationContext.getBean(beanClass);
     }
+
+    // Nuevo método: publicar eventos directamente
+    public static void publishEvent(Object event) {
+
+        if (applicationContext == null) {
+            throw new IllegalStateException(
+                "El contexto de Spring todavía no está inicializado"
+            );
+        }
+
+        applicationContext.publishEvent(event);
+    }
 }
