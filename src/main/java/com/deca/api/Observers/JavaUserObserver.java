@@ -2,7 +2,7 @@ package com.deca.api.Observers;
 
 import com.deca.api.Config.SpringContext;
 import com.deca.api.Models.JavaUser;
-import com.deca.api.Services.UserCounterService;
+import org.springframework.context.ApplicationEventPublisher;
 
 import jakarta.persistence.PostPersist;
 
@@ -17,10 +17,10 @@ public class JavaUserObserver {
 
         if (entity instanceof JavaUser user) {
 
-            UserCounterService userCounterService =
-                SpringContext.getBean(UserCounterService.class);
+            ApplicationEventPublisher publisher =
+                SpringContext.getBean(ApplicationEventPublisher.class);
 
-            userCounterService.increment();
+            publisher.publishEvent(user);
         }
     }
 }
