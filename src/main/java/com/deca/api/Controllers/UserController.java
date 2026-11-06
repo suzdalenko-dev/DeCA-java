@@ -144,15 +144,15 @@ public class UserController {
         int count = javaUserRepository.findAll().size();
 
         return Map.of(
-            "count", String.valueOf(count),
-            "connected", connected,
-            "date", date,
-            "user", user,
-            "users", users,
-            "users1", users1,
-            "names", names,
-            "emails", emails,
-            "user1", user1
+            "count", String.valueOf(count)
         );
+                //    "connected", connected,
+        //    "date", date,
+        //    "user", user,
+        //    "users", users,
+        //    "users1", users1,
+        //    "names", names,
+        //    "emails", emails,
+        //    "user1", user1
     }
 }
