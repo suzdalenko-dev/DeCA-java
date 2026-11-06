@@ -46,7 +46,7 @@ public class JavaUserObserver {
         Buscamos si existe la linea de UserCounter y si existe la recuperamos y actualizamos el valor, si no existe la creamos con valor 1
         */
         if (entity instanceof JavaUser user) {
-        
+            increment();
         }
     }
 }
