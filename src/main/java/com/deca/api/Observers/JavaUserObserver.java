@@ -1,35 +1,26 @@
 package com.deca.api.Observers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
+import com.deca.api.Config.SpringContext;
 import com.deca.api.Models.JavaUser;
 import com.deca.api.Services.UserCounterService;
 
-import jakarta.persistence.PostLoad;
 import jakarta.persistence.PostPersist;
-import jakarta.persistence.PostRemove;
-import jakarta.persistence.PostUpdate;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreRemove;
-import jakarta.persistence.PreUpdate;
 
 public class JavaUserObserver {
-    @Autowired
-    private UserCounterService userCounterService;
 
-    @PostPersist 
+    @PostPersist
     public void afterSave(Object entity) {
-        System.out.println("JavaUserObserver: afterSave called for entity: " + entity);
-        /*
-        Buscamos si existe la linea de UserCounter y si existe la recuperamos y actualizamos el valor, si no existe la creamos con valor 1
-        */
+
+        System.out.println(
+            "JavaUserObserver: afterSave called for entity: " + entity
+        );
+
         if (entity instanceof JavaUser user) {
-            /*  actualizar aqui que problema hay, 
-            buscar si existe linea en "user_counter" si no existe la creamos con value=1 si existe value=value+1
-            que cojones problema hay de hacerlo aqui !"!!!!!!!!!!!!!!!!!!!!"
-            */
-           userCounterService.increment();
+
+            UserCounterService userCounterService =
+                SpringContext.getBean(UserCounterService.class);
+
+            userCounterService.increment();
         }
     }
 }
-
