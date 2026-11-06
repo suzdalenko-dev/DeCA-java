@@ -1,6 +1,9 @@
 package com.deca.api.Models;
+import com.deca.api.Observers.JavaUserObserver;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -22,6 +25,7 @@ import jakarta.persistence.UniqueConstraint;
     }
 )
 
+@EntityListeners(JavaUserObserver.class)
 public class JavaUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

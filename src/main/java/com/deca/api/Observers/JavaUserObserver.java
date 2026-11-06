@@ -1,6 +1,7 @@
 package com.deca.api.Observers;
 
 import com.deca.api.Models.JavaUser;
+import com.deca.api.Repositories.JavaUserRepository;
 
 import jakarta.persistence.PostLoad;
 import jakarta.persistence.PostPersist;
@@ -47,7 +48,7 @@ public class JavaUserObserver {
         Buscamos si existe la linea de UserCounter y si existe la recuperamos y actualizamos el valor, si no existe la creamos con valor 1
         */
         if (entity instanceof JavaUser user) {
-            
+            JavaUserRepository.save(user);
         }
     }
 }
