@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>4.1.2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<groupId>com.deca</groupId>
 	<artifactId>deca-api</artifactId>
@@ -46,6 +46,18 @@
     		<scope>runtime</scope>
     		<optional>true</optional>
 		</dependency>
+		<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-webmvc</artifactId>
+		</dependency>
+		<!-- Reinicio automático durante el desarrollo -->
+    	<dependency>
+    	    <groupId>org.springframework.boot</groupId>
+    	    <artifactId>spring-boot-devtools</artifactId>
+    	    <scope>runtime</scope>
+    	    <optional>true</optional>
+    	</dependency>
+
 	</dependencies>
 
 	<build>
@@ -56,5 +68,8 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
+<!--
+mvn spring-boot:run
+mvn package
+-->
