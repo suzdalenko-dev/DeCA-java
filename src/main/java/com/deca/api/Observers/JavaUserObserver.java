@@ -24,7 +24,11 @@ public class JavaUserObserver {
         Buscamos si existe la linea de UserCounter y si existe la recuperamos y actualizamos el valor, si no existe la creamos con valor 1
         */
         if (entity instanceof JavaUser user) {
+            /*  actualizar aqui que problema hay, 
+            buscar si existe linea en "user_counter" si no existe la creamos con value=1 si existe value=value+1
+            que cojones problema hay de hacerlo aqui !"!!!!!!!!!!!!!!!!!!!!"
             userCounterService.increment();
+            */
         }
     }
 }
