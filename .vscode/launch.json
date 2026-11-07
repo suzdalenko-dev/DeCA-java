@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "DeCA API - Local",
+            "request": "launch",
+            "mainClass": "com.deca.api.DecaApiApplication",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
